@@ -1,0 +1,14 @@
+Docker Commands that comes in handy-
+
+$ docker version                   # gives docker client and docker server engine information and versions.
+$ docker ps                        # used to check the containers running on docker. It shows fields- CONTAINER ID, IMAGE(image from which it is built), COMMAND(commands it executes when starting the container), CREATED, STATUS(is it running or exited), PORTS, NAMES(of container) 
+# docker ps -a                     # to check all contaners both running and not running ones
+$ docker images                    # used to check the images available on the host
+$ docker run redis                 # to run a container using an image. It is 'redis' image here.
+$ docker stop <container-id>       # to stop a running container
+$ docker rm <container ids's>     # to delete/remove the containers, you an add as many container ids to be deleted. The container first needs to be stopped before deleting
+$ docker rmi <image name>          # to delete image
+$ docker rm -f $(docker ps -aq)    # to stop and delete all containers running on the host (running and not-running ones. -f = force remove, -a = all, -q = quietly means only container ids will be listed)
+$ docker pull <image link>         # to pull the image from docker/any hub
+$ docker run -d --name <the app name you want to give> <image to create container from, -d = detached mode, you run container in detached mode means in background so that it you can continue doing other things>
+ex: docker run -d --name webapp nginx:1.14-alpine
