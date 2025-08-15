@@ -5,6 +5,7 @@ ubuntu@ip-172-31-27-157:~$ docker build -t demo-profile:dev .
 ubuntu@ip-172-31-27-157:~/my_profile$ docker run -p 8000:8000 web_profile:dev
 Watching for file changes with StatReloader
 
+
 <img width="1141" height="338" alt="Screenshot 2025-08-15 at 4 26 02 PM" src="https://github.com/user-attachments/assets/74186978-0290-48fb-96bd-6e75f600bb6b" />
 
 
