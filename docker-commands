@@ -13,4 +13,7 @@ $ docker pull <image link>         # to pull the image from docker/any hub
 $ docker run -d --name <the app name you want to give> <image to create container from, -d = detached mode, you run container in detached mode means in background so that it you can continue doing other things>
 ex: docker run -d --name webapp nginx:1.14-alpine
 $ docker run -p 38282:8080 --name blue-app -d kodekloud/simple-webapp:blue     $ -p is for mapping the host-port:container-port , naming the container as blue-app and -d is to run container in detached mode, so that your terminal is free to run other commands.
+$ docker inspect <container-id>    # we see env variables set for a container on docker inspect command.
+$ docker run kodekloud/simple-webapp --name=blue-app -p 38282-8080 -e APP_COLOR=blue         #here we set environment variable APP_COLOR to blue using the -e flag
+$ docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql       # using this we set the password for environment. We get this env variable from docker hub
 
