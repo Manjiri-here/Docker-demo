@@ -1,0 +1,37 @@
+$ docker volume ls
+
+$ docker volume create docker-demo
+docker-demo
+
+$ docker volume inspect docker-demo
+[
+    {
+        "CreatedAt": "2025-08-21T06:42:50Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/docker-demo/_data",
+        "Name": "docker-demo",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+
+$ docker volume rm <name of volume>
+$ docker run -d --mount source=demo-volume,target=/app <image-name>   # here we are running a n image and also mounting a vloume to it. sourve is the name of volume and target is the directory in container where you want to copy the data from
+
+Once the volume is mounted we can insect docker container and check 'Mounts' sectin there as below. If you want to add more firld values then you can add a comma after target in above command and keep adding field and its value.
+
+Volume can be deleted only after deleting container attached to it.
+
+"Mounts": [
+            {
+                "Type": "volume",
+                "Name": "demo-volume",
+                "Source": "/var/lib/docker/volumes/demo-volume/_data",
+                "Destination": "/app",
+                "Driver": "local",
+                "Mode": "z",
+                "RW": true,          # RW means read-write.
+                "Propagation": ""
+            }
+        ],
