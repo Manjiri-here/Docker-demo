@@ -16,4 +16,4 @@ $ docker run -p 38282:8080 --name blue-app -d kodekloud/simple-webapp:blue     $
 $ docker inspect <container-id>    # we see env variables set for a container on docker inspect command.
 $ docker run kodekloud/simple-webapp --name=blue-app -p 38282-8080 -e APP_COLOR=blue         #here we set environment variable APP_COLOR to blue using the -e flag
 $ docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql       # using this we set the password for environment. We get this env variable from docker hub
-
+$ docker image prune  # deletes all images which does not have any contaner running on them. Be caustious while using this command
