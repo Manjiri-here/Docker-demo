@@ -1,4 +1,4 @@
-Docker multi stage image:
+Docker multi stage build:
 
 Command : $ docker build -t my-profile:dev .
 
