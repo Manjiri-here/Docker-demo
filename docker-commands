@@ -19,38 +19,3 @@ $ docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql       # usi
 $ docker image prune  # deletes all images which does not have any contaner running on them(dangling images). Be caustious while using this command
 $ docker rmi -f $ (docker images -aq)
 
-$ docker volume ls
-
-$ docker volume create docker-demo
-docker-demo
-
-$ docker volume inspect docker-demo
-[
-    {
-        "CreatedAt": "2025-08-21T06:42:50Z",
-        "Driver": "local",
-        "Labels": null,
-        "Mountpoint": "/var/lib/docker/volumes/docker-demo/_data",
-        "Name": "docker-demo",
-        "Options": null,
-        "Scope": "local"
-    }
-]
-
-$ docker volume rm <name of volume>
-$ docker run -d --mount source=demo-volume,target=/app <image-name>   # here we are running a n image and also mounting a vloume to it. sourve is the name of volume and target is the directory in container where you want to copy the data from
-
-Once the volume is mounted we can insect docker container and check 'Mounts' sectin there as below
-
-"Mounts": [
-            {
-                "Type": "volume",
-                "Name": "demo-volume",
-                "Source": "/var/lib/docker/volumes/demo-volume/_data",
-                "Destination": "/app",
-                "Driver": "local",
-                "Mode": "z",
-                "RW": true,
-                "Propagation": ""
-            }
-        ],
