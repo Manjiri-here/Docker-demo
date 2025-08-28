@@ -19,4 +19,3 @@ $ docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mysql       # usi
 $ docker image prune  # deletes all images which does not have any contaner running on them(dangling images). Be caustious while using this command
 $ docker rmi -f $ (docker images -aq)
 $ docker exec -it <container-name> /bin/bash  # using this command we login to a container means we actually get logged into it like ssh session
-$ 
