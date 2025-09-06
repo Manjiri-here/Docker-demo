@@ -2,6 +2,11 @@ Demo result-
 
 ubuntu@ip-172-31-27-157:~$ docker build -t demo-profile:dev .
 
+Screenshot of building an image from Dockerfile from different day but built from same source code:
+
+<img width="1792" height="1036" alt="Screenshot 2025-09-06 at 10 50 55 AM" src="https://github.com/user-attachments/assets/8cdb2c90-acab-4343-8df7-deb3ed48e0ef" />
+
+
 ubuntu@ip-172-31-27-157:~/my_profile$ docker run -p 8000:8000 web_profile:dev
 
 Watching for file changes with StatReloader
