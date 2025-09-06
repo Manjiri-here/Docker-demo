@@ -24,3 +24,11 @@ $ docker logs <container id>  ... used to view application logs which is running
 $ docker inspect <container-id>    # we see env variables set for a container on docker inspect command. And also a powerful command to know about container or any object details in docker.
 
 
+$ docker system df
+Ex:
+ubuntu@ip-172-31-21-209:~$ docker system df
+TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
+Images          2         1         866.8MB   866.8MB (100%)
+Containers      1         0         0B        0B
+Local Volumes   0         0         0B        0B
+Build Cache     0         0         0B        0B
