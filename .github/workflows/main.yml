@@ -15,7 +15,7 @@ jobs:
     - name: Set up python
       uses: actions/setup-python@v6
       with:
-        python-version: '3.13'
+        python-version: '3.10'
 
 #Below two lines are common commands in the "Install dependencies" step of a Python project's GitHub Actions YAML file (usually in .github/workflows/*.yml). They set up the Python environment by installing required packages.
 # This uses Python to run the pip module (-m means "run as a module") and upgrades pip itself to the latest version available on PyPI (Python Package Index).
