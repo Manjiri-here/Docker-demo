@@ -28,7 +28,8 @@ jobs:
     - name: Lint (basic)
       run: |
         pip install flake8
-        flake8 . --exclude=venv,migrations --max-line-length=120
+        flake8 . \ --exclude=.venv,venv,__pycache__,migrations,site-packages \ --max-line-length=120
+
 
   docker-build-push:
     needs: build
