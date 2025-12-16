@@ -19,11 +19,7 @@ jobs:
 
 #Below two lines are common commands in the "Install dependencies" step of a Python project's GitHub Actions YAML file (usually in .github/workflows/*.yml). They set up the Python environment by installing required packages.
 # This uses Python to run the pip module (-m means "run as a module") and upgrades pip itself to the latest version available on PyPI (Python Package Index).
- # It's a simple text file listing your project's dependencies (external libraries), often with specific versions. Tells pip to "read from a requirements file" (short for --requirement). Without it, pip would think "requirements.txt" is a package name (which it's not).
-
-    - name: Install dependencies 
-      run: |
-        python -m pip install --upgrade pip         
+ # It's a simple text file listing your project's dependencies (external libraries), often with specific versions. Tells pip to "read from a requirements file" (short for --requirement). Without it, pip would think "requirements.txt" is a package name (which it's not).       
     
     - name: Run tests
       run: |
