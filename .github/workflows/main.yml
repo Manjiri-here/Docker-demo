@@ -1,0 +1,59 @@
+name: django-app
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: action.checkout@v4
+
+    - name: Set up python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.13'
+
+#Below two lines are common commands in the "Install dependencies" step of a Python project's GitHub Actions YAML file (usually in .github/workflows/*.yml). They set up the Python environment by installing required packages.
+# This uses Python to run the pip module (-m means "run as a module") and upgrades pip itself to the latest version available on PyPI (Python Package Index).
+ # It's a simple text file listing your project's dependencies (external libraries), often with specific versions. Tells pip to "read from a requirements file" (short for --requirement). Without it, pip would think "requirements.txt" is a package name (which it's not).
+
+    - name: Install dependencies 
+      run: |
+        python -m pip install --upgrade pip    
+        pip install -r requirements.txt      
+    
+    - name: Run tests
+      run: |
+        python3 manage.py test
+
+    - name: Lint (basic)
+      run: |
+        pip install flake8
+        flake8 . --exclude=venv,migrations --max-line-length=120
+
+  docker-build-push:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Login to dockerhub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build docker image
+      run: |
+        docker build -t ${{secrets.DOCKER_USERNAME}}/docker-demo:latest .
+
+    - name: Push docker image
+      run: |
+        docker push ${{secrets.DOCKER_USERNAME}}/docker-demo:'latest'
+
