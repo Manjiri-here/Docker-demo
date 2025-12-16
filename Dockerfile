@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 COPY . .
 
-RUN apt-get update && apt-get install -y python3 python3-pip python3-venv pkg-config libdbus-1-dev libglib2.0-dev build-essential python3-dev dbus-x11 libcairo2-dev ibgirepository1.0-dev 
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv pkg-config libdbus-1-dev libglib2.0-dev build-essential python3-dev dbus-x11 libcairo2-dev libgirepository1.0-dev 
 
 SHELL ["/bin/bash", "-c"]
 
