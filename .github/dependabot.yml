@@ -10,7 +10,3 @@ updates:
     schedule:
       interval: "weekly"  # Or daily/monthly
   # Add more for npm, pip, etc. if your repo uses them
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
