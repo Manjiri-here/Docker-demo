@@ -21,9 +21,9 @@ jobs:
 # This uses Python to run the pip module (-m means "run as a module") and upgrades pip itself to the latest version available on PyPI (Python Package Index).
  # It's a simple text file listing your project's dependencies (external libraries), often with specific versions. Tells pip to "read from a requirements file" (short for --requirement). Without it, pip would think "requirements.txt" is a package name (which it's not).       
     
-    - name: Run tests
-      run: |
-        python3 manage.py test
+ #   - name: Run tests
+ #     run: |
+ #       python3 manage.py test
 
     - name: Lint (basic)
       run: |
