@@ -48,6 +48,6 @@ jobs:
 
     - name: Build and push docker image
       run: |
-        docker build -t ${{secrets.DOCKER_USERNAME}}/my_profile:v1 .
-        docker push ${{secrets.DOCKER_USERNAME}}/my_profile:v1
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my_profile:v1 .
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/my_profile:v1
 
