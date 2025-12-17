@@ -1,6 +1,6 @@
 [flake8]
 exclude = .venv,venv,__pycache__,migrations,site-packages
 per-file-ignores =
-    my_profile/admin.py
-    my_profile/models.py
-    my_profile/tests.py
+    my_profile/admin.py:F401
+    my_profile/models.py:F401
+    my_profile/tests.py:F401
