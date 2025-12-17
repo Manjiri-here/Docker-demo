@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 def profile_view(request):
     context = {
         "name": "Manjiri Naik",
